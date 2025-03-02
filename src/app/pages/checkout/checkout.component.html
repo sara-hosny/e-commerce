@@ -1,0 +1,25 @@
+<section>
+    <h3 class="title text-green-600 text-center mt-7">Checkout detalies</h3>
+
+    <form  class="w-[80%] mx-auto p-5" [formGroup]="checkOutform" (ngSubmit)="SubmitForm()">
+        <div class="mb-2">
+            <label for="details" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Details Adress:</label>
+            <input formControlName="details" type="text" id="default-input" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+           
+        </div>
+        <div class="mb-2">
+            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">phone number:</label>
+            <input formControlName="phone" type="tel" id="default-input" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+       
+        </div>
+
+        <div class="mb-2">
+            <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">city:</label>
+            <input formControlName="city" type="text" id="default-input" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+       
+        </div> 
+        <button class="bg-green-500 block ms-auto text-white rounded-md px-3 py-2 hover:bg-green-800" type="submit">online payment</button>
+    
+
+    </form>
+</section>

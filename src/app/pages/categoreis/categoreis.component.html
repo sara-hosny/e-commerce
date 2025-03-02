@@ -1,0 +1,9 @@
+<section class="mx-auto w-[80%] mt-16">
+<div class="main  grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+@for (cat of catList; track $index) {
+    <div class="card hover:shadow-lg hover:border-green-500 hover:-translate-y-2  shadow-md overflow-hidden transition-all duration-300 w-full bg-white border border-gray-400 rounded-lg">
+     <img [src]="cat.image" alt="" class="w-full h-60 object-cover">
+     <h2 class="text-green-700 font-semibold text-lg text-center p-3">{{ cat.name }}</h2>    </div>
+}
+</div>
+</section>

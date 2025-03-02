@@ -1,0 +1,48 @@
+<section class="mx-auto w-[80%]">
+
+<h2 class="text-green-600 my-5 font-bold">Forget password</h2>
+@if (step == 1) {
+    <form [formGroup]="forgetForm" (ngSubmit)="forget()">
+        <div class="mb-2">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">email</label>
+            <input formControlName="email" type="email" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+        </div>
+        <button class="bg-green-500 block ms-auto text-white rounded-md px-3 py-2 hover:bg-green-800" type="submit">next</button>
+    
+    </form>
+}
+@if (step==2) {
+    <form [formGroup]="confirmCodeForm" (ngSubmit)="confirm()">
+        <div class="mb-2">
+            <label for="code" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">code</label>
+            <input formControlName="resetCode" type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+        </div>
+        <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please introduce the 6 digit code we sent via email.</p>
+        <button class="bg-green-500 block ms-auto text-white rounded-md px-3 py-2 hover:bg-green-800" type="submit">next</button>
+    
+    </form>
+}
+
+@if (step==3) {
+    <form [formGroup]="resetPassForm" (ngSubmit)="reset()">
+        <div  class="mb-2">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">email</label>
+            <input formControlName="email" type="email" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+        </div>
+        <div class="mb-2">
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">new password</label>
+            <input formControlName="newPassword" type="password" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+        </div>
+        <button  class="bg-green-500 block ms-auto text-white rounded-md px-3 py-2 hover:bg-green-800" type="submit">next</button>
+    
+    </form>
+}
+
+    
+
+
+
+
+
+
+</section>

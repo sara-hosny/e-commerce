@@ -1,0 +1,21 @@
+<section class="w-[90%] mx-auto mt-10">
+    <div class="flex justify-between items-center">
+        <div class="img w-[25%]">
+<img [src]="productData.imageCover" alt="" class="">
+        </div>
+        <div class="data w-[70%]">
+<h2> <span class="text-green-500 title">title:</span> {{productData.title}}</h2>
+<p><span class="text-green-500 title"> Product Description:</span>{{productData.description}}</p>
+<p><span class="text-green-500 title"> Category :</span>{{productData.category.name}}</p>
+<div class="flex justify-between">
+    <h6><span class="text-green-500 title">price:</span>{{productData.price}} EGP</h6>
+    <div class="flex">
+        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+        <h6> {{productData.ratingsAverage}}</h6>
+    </div></div>
+    <button (click)="addTocart(productData._id)" class="bg-green-600 w-[100%] mt-5 text-white block mx-auto rounded-md py-4 mb-4">Add to cart</button>
+
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+<div class="container mx-auto">  
+      <div class="container mx-auto p-5">
+        <div class="mb-2 flex justify-center">
+            <input [(ngModel)]="searchTerm" type="text" placeholder="search" id="default-input" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-[50%] ">  
+        </div>
+          <div class="products my-5">
+           
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10"> 
+            
+                  @for(product of productList |search:searchTerm;  track $index) {
+                      <div class="card w-full gap-10 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                    <a [routerLink]="['/detailes' , product.id]" >
+                      <div class="card-img">
+                          <img [src]="product.imageCover" alt="" class="w-full">
+                       </div>
+                          <div class="card-body p-5">
+                            
+                                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ product.title.split(' ').slice(0, 2).join(' ') }}</h5>
+                              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-2">{{product.description}}.</p>
+                          </div>
+                    </a>
+                          <button (click)="addTocart(product._id)" class="bg-green-600 w-[90%] text-white block mx-auto rounded-md py-4 mb-4">Add to cart</button>
+  
+                      </div>
+                  }
+              </div>
+          </div>
+      </div>
+  </div>

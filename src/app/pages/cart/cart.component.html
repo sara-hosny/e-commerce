@@ -1,0 +1,42 @@
+
+@if (cartData.products.length>0) {
+    <section class="bg-gray-100 p-5 rounded-md mt-10 mx-auto w-[80%]">
+    <h2 class="text-2xl mb-4">Your cart:</h2>
+<p class="text-green-600 mb-4">total cart price: {{cartData.totalCartPrice}}</p>
+    @for (item of cartData.products; track $index) {
+
+        <div class="flex">
+            <div class="img w-[10%]">
+                <img [src]="item.product.imageCover" alt="">
+            </div>
+            <div class="produc flex w-[90%] px-5 justify-between">
+        <div>
+            <h2 class="font-bold">{{item.product.title}}</h2>
+            <h2>price: <span class="text-green-600">{{item.price | currency:'EGP'}} </span></h2>
+            <button (click)="removeItem(item.product._id)" class="text-red-700"><i class="fa-solid fa-trash"></i> Remove</button>
+        </div>
+        
+        <div class="button space-x-3  justify-between">
+            <button (click)="updateProductQuntity(item.product._id,item.count+1)" class=" border border-solid border-green-600 bg-transparent p-1 rounded-md"><i class="fa-solid fa-plus text-green-600"></i></button>
+            <span>{{item.count}}</span>
+            <button (click)="updateProductQuntity(item.product._id,item.count-1)" class=" border border-solid border-green-600 bg-transparent p-1  rounded-md"><i class="fa-solid fa-minus text-green-500"></i></button>
+        </div>
+            </div>   
+        </div>
+     <div class="sep bg-gray-100 h-3"></div>
+    
+    }
+    
+    <div class="buttons flex justify-between">
+        <button (click)="clearCart()"  class="bg-red-600 w-[10%] text-white block  rounded-md py-2 mb-4">Clear Cart</button>
+        <button [routerLink]="['/checkout',cartData._id]" class="bg-cyan-900 w-[10%] text-white block  rounded-md py-2 mb-4">Check Out</button>
+    </div>
+</section>
+}@else {
+    <div class="text-center  bg-gray-100 p-10 rounded-md mt-16 mx-auto w-[40%]">
+        <i class="fa-regular fa-face-sad-tear text-6xl text-green-600"></i>
+        <p class="text-3xl font-bold mt-2">your cart is empty</p>
+    </div>
+}
+
+
