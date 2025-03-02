@@ -13,6 +13,11 @@ import { ProductComponent } from './pages/product/product.component';
 import { authGuard } from './core/guards/auth.guard';
 import { loggedGuard } from './core/guards/logged.guard';
 
+
+
+
+
+
 export const routes: Routes = [
     {path:"",redirectTo:'home',pathMatch:'full'},
     {path:"",component:AuthLayoutComponent,title:'auth',children:[
@@ -26,9 +31,10 @@ export const routes: Routes = [
      {path:"cart",canActivate:[authGuard],loadComponent:()=>import('./pages/cart/cart.component').then((c)=>c.CartComponent),title:'cart'},
      {path:"brand",canActivate:[authGuard],loadComponent:()=>import('./pages/brand/brand.component').then((c)=>c.BrandComponent),title:'brand'},
      { path: "categories",canActivate:[authGuard], loadComponent: () => import('./pages/categoreis/categoreis.component').then((c) => c.CategoreisComponent), title: 'categories' },
-     { path: "detailes/:id",canActivate:[authGuard], loadComponent: () => import('./pages/details/details.component').then((c) => c.DetailsComponent), title: 'detailes' },
+     {path: "detailes/:id", loadComponent: () => import('./pages/details/details.component').then(c => c.DetailsComponent), title: 'detailes'},
      { path: "product",canActivate:[authGuard], loadComponent: () => import('./pages/product/product.component').then((c) => c.ProductComponent), title: 'product' },
-     { path: "checkout/:id",canActivate:[authGuard], loadComponent: () => import('./pages/checkout/checkout.component').then((c) => c.CheckoutComponent), title: 'checkout' },
+     { path: "checkout/:id", loadComponent: () => import('./pages/checkout/checkout.component').then(c => c.CheckoutComponent), title: 'checkout'} ,
+
      { path: "allorders",canActivate:[authGuard], loadComponent: () => import('./pages/allorders/allorders.component').then((c) => c.AllordersComponent), title: 'allorders' },
 
      { path: "**",canActivate:[authGuard], loadComponent: () => import('./pages/notfound/notfound.component').then((c) => c.NotfoundComponent), title: 'Not found' }
@@ -36,3 +42,7 @@ export const routes: Routes = [
 
     
 ];
+
+
+
+
